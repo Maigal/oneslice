@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oneslice</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <!-- Initial selection screen -->
+      <section id="selectScreen" class="panel container">
+        <div id="dropZoneSelect" class="drop-zone">
+          <div>Select video</div>
+        </div>
+      </section>
+
+      <!-- Editor screen -->
+      <section id="editorScreen" class="panel container hidden">
+        <div>
+          <div id="previewWrap" class="preview-wrapper">
+            <video id="preview" controls preload="metadata"></video>
+          </div>
+        </div>
+
+        <div class="timeline-wrapper">
+          <input
+            id="rangeStart"
+            type="range"
+            min="0"
+            max="100"
+            step="0.01"
+            value="0"
+          />
+          <input
+            id="rangeEnd"
+            type="range"
+            min="0"
+            max="100"
+            step="0.01"
+            value="100"
+          />
+          <div class="timeline-bar">
+            <div class="timeline-selected"></div>
+          </div>
+          <div class="thumb thumb-start" aria-hidden="true"></div>
+          <div class="thumb thumb-end" aria-hidden="true"></div>
+        </div>
+        <div class="times">
+          <span>Start: <span id="startLabel">0.00</span>s</span>
+          <span>End: <span id="endLabel">0.00</span>s</span>
+        </div>
+
+        <div class="actions">
+          <button id="backButton" type="button">Back</button>
+          <button id="exportButton" class="primary" type="button">
+            Export
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

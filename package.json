@@ -1,0 +1,25 @@
+{
+  "name": "oneslice",
+  "version": "0.1.0",
+  "description": "Simple Electron app for slicing videos with ffmpeg.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "ffmpeg",
+    "video",
+    "slice"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0"
+  },
+  "devDependencies": {
+    "electron": "^41.2.1",
+    "electron-reload": "^1.5.0"
+  }
+}
