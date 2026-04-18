@@ -5,7 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron ."
+    "dev": "electron .",
+    "build": "electron-builder --win portable"
   },
   "keywords": [
     "electron",
@@ -20,6 +21,29 @@
   },
   "devDependencies": {
     "electron": "^41.2.1",
+    "electron-builder": "^24.6.4",
     "electron-reload": "^1.5.0"
+  },
+  "build": {
+    "appId": "com.oneslice.app",
+    "productName": "Oneslice",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**"
+    ],
+    "files": [
+      "src/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
   }
 }

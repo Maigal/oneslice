@@ -8,3 +8,9 @@ Minimal Electron POC for slicing videos with `ffmpeg`.
 npm install
 npm start
 ```
+
+## Building
+
+```
+npm run build
+```

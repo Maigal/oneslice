@@ -1,7 +1,11 @@
 const { app, BrowserWindow, dialog, ipcMain, Menu } = require("electron");
 const { spawn } = require("node:child_process");
 const path = require("node:path");
-const ffmpegPath = require("ffmpeg-static");
+
+let ffmpegPath = require("ffmpeg-static");
+if (app.isPackaged) {
+  ffmpegPath = ffmpegPath.replace("app.asar", "app.asar.unpacked");
+}
 
 try {
   require("electron-reload")(__dirname, {

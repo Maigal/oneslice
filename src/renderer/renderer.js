@@ -33,7 +33,8 @@ function setExporting(isExporting) {
 }
 
 function attachFileToPlayer(filePath) {
-  preview.src = filePath;
+  const fileUrl = "file:///" + filePath.replace(/\\/g, "/");
+  preview.src = fileUrl;
   showEditor();
   currentInputPath = filePath;
 }
